@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SignUp Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> 
+addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+</script>
+<link href="../ass/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="shortcut icon" type="image/x-icon" href="../ass/favish.png">
+
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+</head>
+<body>
+	<div class="main-w3layouts wrapper">
+		<img src="../ass/img/SUIS CREDIT BANK white all-01.png" alt="" style="width: 23%;
+		margin-top: -10%;
+		margin-bottom: -8%;">   
+		<h1>SignUp Form</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+
+				<form action="/users/register" method="POST" id="adminF" >
+					<% include ./partials/messages %>
+							<input class="text" type="text" name="name" placeholder="Username" required="">
+					<input class="text email" type="email" name="email" placeholder="Email" required="">
+					<input class="text" type="password" name="pin" placeholder="Pin" required="">
+					
+					<input class="text w3lpass" type="password" name="password" placeholder=" Password" required="">
+					<input class="text w3lpass" type="password" name="password2" placeholder="Comfirm Password" required="">
+
+					<button>SIGN UP</button>
+                </form>
+                
+
+				<p>have an Account? <a href="/users/login"> Login Now!</a></p>
+				<br>
+				<p> <a href="/"> Return to home</a></p>
+
+			</div>
+		</div>
+		<p style="    text-align: center;
+		color: white;">© 2019 Suis Credit Investment Bank. All Rights Reserved.</p>
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li> 
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->
+
+</body>
+</html>

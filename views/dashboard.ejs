@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../ass/dash.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../ass/favish.png">
+
+    <style>
+    *{
+        margin:0px;
+        padding: 0px;
+        font-family: sans-serif;
+
+    }
+    #sidebar{
+        position: fixed;
+        width: 200px;
+        height: 100%;
+        background-image:  linear-gradient(260deg, #1A2980 0%, #26D0CE 100%);
+        left: -200px;
+       transition: all 500ms linear;
+    }
+    #sidebar.active{
+        left: 0px;
+    }
+    #sidebar ul li {
+        color: white;
+        list-style: none;
+        padding: 15px 10px;
+        border-bottom:1px solid #1A2980;
+        cursor: pointer;
+    }
+   
+    .logoDiv{
+        color: white;
+        padding: 15px 10px;
+        border-bottom:1px solid #1A2980;
+        background: linear-gradient(260deg, #26D0CE 0%, #1A2980 100%);
+    }
+    #sidebar ul li:hover {
+      background: #1A2980;
+      color: white;
+      padding-left: 30px;
+     transition: all 50ms linear;
+
+
+    }
+    #sidebar ul li.selected{
+        background: #1A2980;
+        color: white;
+
+
+    }
+    #sidebar .toggle-btn{
+        position: absolute;
+        left:230px;
+        top: 29px;
+    }
+#active{
+    position: absolute;
+    left: 312px;
+    top: 28px;
+    width: 45%;
+    color: white;
+
+}
+#user{
+    position: absolute;
+    left: 1218px;
+    top: 20px;
+    width: 105%;
+    display: flex;
+    /* align-content: flex-end; */
+    color: white;
+
+}
+#user.active{
+   display: none
+
+
+}
+#imguser{
+    width:40px;
+}
+    #sidebar .toggle-btn span {
+        display: block;
+        width: 30px;
+        height: 5px;
+        background:  white;
+        margin: 3px 0px
+    }
+    #toggle-c{
+        width: 1488px;
+        border-bottom: 1px solid #1A2980;
+    }
+
+#content1{
+    padding: 5% 3% 0 3%;
+
+}
+#content1.active{
+    padding: 5% 3% 0 19%;
+
+}
+
+#content2{
+    padding: 5% 3% 0 3%;
+
+}
+#content2.active{
+    padding: 5% 3% 0 19%;
+
+}
+#content3{
+    padding: 5% 3% 0 3%;
+
+}
+#content3.active{
+    padding: 5% 3% 0 19%;
+
+}
+#content4{
+    padding: 5% 3% 0 3%;
+
+}
+#content4.active{
+    padding: 5% 3% 0 19%;
+
+}
+#content5{
+    padding: 5% 3% 0 3%;
+
+}
+#content5.active{
+    padding: 5% 3% 0 19%;
+
+}
+.t2c{
+    margin-top: 3%;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.t2{
+    padding: 10px;
+    border: 1px solid gainsboro;
+    width: 22%;
+    border-radius: 3px;
+}
+#puser{
+    font-size: 1.5rem;
+    margin-left: 5px;
+    margin-top: 5px;}
+
+#container{
+    padding-top: 5%
+}
+@media only screen and (max-width: 760px)  {
+    #container{
+    padding-top: 20%
+}
+    .t2{
+        width: 95%
+    }
+    button{
+        width: 100%
+    }
+    .img{
+        margin-top:20%
+    }
+    #user{
+        left: 424px;
+    width: 70%;
+    top: 23px;
+
+    }
+    #active.active{
+        display: none;
+
+    }
+    #user.active{
+        display: none;
+    }
+    #puser{
+        font-size: 1rem;
+    }
+    #imguser{
+        width: 33px;
+    height: 37px;    }
+    .toggle-btn.active{
+        left: 199px;
+
+    }
+}
+
+.t2sub{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 10% 4% 0% 0%;
+}
+    
+    </style>
+</head>
+<body>
+<div id="sidebar">
+    <div id="toggle-c">
+        <div class="logoDiv">
+            <img src='../ass/logoish.png' alt="">
+        </div>
+
+        <div class='toggle-btn ' onclick="toggleSidebar()">
+        
+                <span></span>
+                <span></span>
+                <span></span>
+        
+        
+               
+        </div>
+        
+       
+        <div id="active">
+        
+                <p style="display: inline">Active</p>
+                 <img src="../ass/img/remove.png" alt="" width="13"  >
+        </div>
+
+        <div id="user" >
+            <img id="imguser" src="../ass/img/user.png" alt="" width="30" style="display: inline">
+            <p id="puser" style="display: inline;;
+            ">
+            <%= user.name %>
+        </p>
+
+        </div>
+ 
+    </div>
+   
+    <ul>
+        <li id="li1" class="selected">Account Summary</li>
+        <li id="li2">Pay Bills</li>
+        <li id="li3">Transfer Funds</li>
+        <li id="li4">View Transcations</li>
+        <li id="li5">cards and cheques</li>
+       <a href="/users/logout"><li id="li6">Logout</li></a> 
+    </ul>
+</div>
+<div id="container" ;
+>
+        <div id="content1">
+
+                <section>
+                        <div class="caption">Recent Activity
+                            </div>	
+        <div id="table">
+            <div class="header-row row">
+            <span class="cell primary">Date</span>
+            <span class="cell">Description</span>
+             <span class="cell">Transaction	</span>
+            <span class="cell">Reason</span>
+            <span class="cell">Amount($)
+                </span>
+          </div>
+          <div class="row">
+            <input type="radio" name="expand">
+            <span class="cell primary" data-label="Date">2019-10-17 23:29:27	</span>
+            <span class="cell" data-label="Description">Instant Transfer Outward .	</span>
+             <span class="cell" data-label="Transaction">Transfer out 	</span>
+             <span class="cell" data-label="Reason">No Hold	</span>
+             <span class="cell" data-label="Amount($)">1000</span>
+        
+          </div>
+          <div class="row">
+            <input type="radio" name="expand">
+            <span class="cell primary" data-label="Date">2019-08-30		</span>
+            <span class="cell" data-label="Description">Deposit	</span>
+             <span class="cell" data-label="Transaction">Approved</span>
+             <span class="cell" data-label="Reason">Concert payment	</span>
+             <span class="cell" data-label="Amount($)">240000</span>
+          </div>
+          <div class="row">
+                <input type="radio" name="expand">
+                <span class="cell primary" data-label="Date">2019-10-17 23:29:27	</span>
+                <span class="cell" data-label="Description">Transfer Between Customers		</span>
+                 <span class="cell" data-label="Transaction">Transfer out 	</span>
+                 <span class="cell" data-label="Reason">No Hold	</span>
+                 <span class="cell" data-label="Amount($)">850000</span>
+        
+              </div>
+              <div class="row">
+                <input type="radio" name="expand">
+                <span class="cell primary" data-label="Date">2019-08-30		</span>
+                <span class="cell" data-label="Description">Deposit	</span>
+                 <span class="cell" data-label="Transaction">Approved</span>
+                 <span class="cell" data-label="Reason">Concert payment	</span>
+                 <span class="cell" data-label="Amount($)">630000</span>
+              </div>
+              <div class="row">
+                    <input type="radio" name="expand">
+                    <span class="cell primary" data-label="Date">2019-10-17 23:29:27	</span>
+                    <span class="cell" data-label="Description">Deposit</span>
+                     <span class="cell" data-label="Transaction">Transfer out 	</span>
+                     <span class="cell" data-label="Reason">No Hold	</span>
+                     <span class="cell" data-label="Amount($)">1000000</span>
+        
+                  </div>
+                  <div class="row">
+                    <input type="radio" name="expand">
+                    <span class="cell primary" data-label="Date">2019-08-30		</span>
+                    <span class="cell" data-label="Description">Deposit	</span>
+                     <span class="cell" data-label="Transaction">Approved</span>
+                     <span class="cell" data-label="Reason">Concert payment	</span>
+                     <span class="cell" data-label="Amount($)">40000</span>
+                  </div>
+        
+                  
+        </div>
+        </section>
+        <div class="t2c">
+                <div class="t2">
+                    <p >Account Number
+                        </p>
+                    <div class="t2sub">
+                        <img src="../ass/img/download (6).png" alt="">
+                        <p >7118478527
+                            </p>
+                    </div>
+                </div>
+        
+                <div class="t2">
+                        <p >Account Type
+        
+                            </p>
+                        <div class="t2sub">
+                            <img src="../ass/img/download (7).png" alt="">
+                            <p >Offshore Account
+        
+                                </p>
+                        </div>
+                    </div>
+        
+                    <div class="t2">
+                            <p >Ledger Balance
+        
+                                </p>
+                            <div class="t2sub">
+                                <img src="../ass/img/download (8).png" alt="">
+                                <p >$1,330,600
+        
+                                    </p>
+                            </div>
+                        </div>
+                        <div class="t2">
+                                <p >Available Balance
+        
+                                    </p>
+                                <div class="t2sub">
+                                    <img src="../ass/img/download (9).png" alt="">
+                                    <p >$1,330,600
+        
+                                        </p>
+                                </div>
+                            </div>
+            
+            </div>
+        
+        </div>
+        
+        <div id="content2">
+            <h1 style="    color: rgb(44, 43, 43);
+            color: rgb(44, 43, 43);
+            text-align: center;
+            margin-top: 7%;    ">No Transaction was previously made using the billpay service.
+        
+                </h1>
+        </div>
+        
+        <div id="content3">
+                <form action="reservation.php" method="post">
+                        <div class="elem-group">
+                                <select id="room-selection" name="room_preference" required>
+                                    <option value="">Offshore Account (#7118478527)</option>
+                                  
+                                </select>
+                              </div>
+                              <h2>Beneficiary Details</h2>
+                        <div class="elem-group">
+                          <label for="name">Bank Name
+        </label>
+                          <input type="text" id="name" name="visitor_name"   required>
+                        </div>
+                        <div class="elem-group">
+                                <label for="name">Beneficiary Name
+                                    </label>
+                                <input type="text" id="name" name="visitor_name"  required>
+                              </div>
+                              <div class="elem-group">
+                                    <label for="name">Beneficiary Account Number</label>
+                                    <input type="text" id="name" name="visitor_name"  required>
+                                  </div>
+                                  <div class="elem-group">
+                                        <label for="name">Bank Address
+                                            </label>
+                                        <input type="text" id="name" name="visitor_name"  required>
+                                      </div>
+                                      <div class="elem-group">
+                                            <label for="name">Beneficiary's Email
+                                                </label>
+                                            <input type="text" id="name" name="visitor_name" placeholder="Optional" pattern=[A-Z\sa-z]{3,20} required>
+                                          </div>
+                                          <div class="elem-group">
+                                                <label for="name">Beneficiary's Mobile Number</label>
+                                                <input type="text" id="name" name="visitor_name" placeholder="Optional" pattern=[A-Z\sa-z]{3,20} required>
+                                              </div>
+                                              <div class="elem-group">
+                                                    <label for="name">Bank Iban/Swift No</label>
+                                                    <input type="text" id="name" name="visitor_name"  required>
+                                                  </div>
+                                                  <h2>Payment Details</h2>
+                                                  <div class="elem-group">
+                                                      <label for="Currency"></label>
+                                                        <select id="room-selection" name="room_preference" required>
+                                                            <option value="">British Pounds</option>
+                                                            <option value="">Us Dollars</option>
+        
+                                                          
+                                                        </select>
+                                                      </div>
+                                                      
+                                                          <div class="elem-group">
+                                                                <label for="name">Amount to Transfer
+                                                                    </label>
+                                                                <input type="text" id="name" name="visitor_name"  required>
+                                                              </div>
+                        <div class="elem-group">
+                          <label for="message">Additional Infomration
+                                ?</label>
+                          <textarea id="message" name="visitor_message" placeholder="Tell us anything else that might be important." required></textarea>
+                        </div>
+                        <button type="submit">Transfer Funds</button>
+                      </form>
+        </div>
+        <div id="content4"> 
+                <section>
+                        <div class="caption">Transaction Details and Activities
+        
+                            </div>	
+        <div id="table">
+            <div class="header-row row">
+            <span class="cell primary">Date</span>
+            <span class="cell">Description</span>
+             <span class="cell">Transaction	</span>
+            <span class="cell">Reason</span>
+            <span class="cell">Amount($)
+                </span>
+          </div>
+          <div class="row">
+            <input type="radio" name="expand">
+            <span class="cell primary" data-label="Date">2019-10-17 23:29:27	</span>
+            <span class="cell" data-label="Description">Instant Transfer Outward .	</span>
+             <span class="cell" data-label="Transaction">Transfer out 	</span>
+             <span class="cell" data-label="Reason">No Hold	</span>
+             <span class="cell" data-label="Amount($)">1000</span>
+        
+          </div>
+          <div class="row">
+            <input type="radio" name="expand">
+            <span class="cell primary" data-label="Date">2019-08-30		</span>
+            <span class="cell" data-label="Description">Deposit	</span>
+             <span class="cell" data-label="Transaction">Approved</span>
+             <span class="cell" data-label="Reason">Concert payment	</span>
+             <span class="cell" data-label="Amount($)">240000</span>
+          </div>
+          <div class="row">
+                <input type="radio" name="expand">
+                <span class="cell primary" data-label="Date">2019-10-17 23:29:27	</span>
+                <span class="cell" data-label="Description">Transfer Between Customers		</span>
+                 <span class="cell" data-label="Transaction">Transfer out 	</span>
+                 <span class="cell" data-label="Reason">No Hold	</span>
+                 <span class="cell" data-label="Amount($)">850000</span>
+        
+              </div>
+              <div class="row">
+                <input type="radio" name="expand">
+                <span class="cell primary" data-label="Date">2019-08-30		</span>
+                <span class="cell" data-label="Description">Deposit	</span>
+                 <span class="cell" data-label="Transaction">Approved</span>
+                 <span class="cell" data-label="Reason">Concert payment	</span>
+                 <span class="cell" data-label="Amount($)">630000</span>
+              </div>
+              <div class="row">
+                    <input type="radio" name="expand">
+                    <span class="cell primary" data-label="Date">2019-10-17 23:29:27	</span>
+                    <span class="cell" data-label="Description">Deposit</span>
+                     <span class="cell" data-label="Transaction">Transfer out 	</span>
+                     <span class="cell" data-label="Reason">No Hold	</span>
+                     <span class="cell" data-label="Amount($)">1000000</span>
+        
+                  </div>
+                  <div class="row">
+                    <input type="radio" name="expand">
+                    <span class="cell primary" data-label="Date">2019-08-30		</span>
+                    <span class="cell" data-label="Description">Deposit	</span>
+                     <span class="cell" data-label="Transaction">Approved</span>
+                     <span class="cell" data-label="Reason">Concert payment	</span>
+                     <span class="cell" data-label="Amount($)">40000</span>
+                  </div>
+        
+                  <div class="row">
+                        <input type="radio" name="expand">
+                        <span class="cell primary" data-label="Date">2019-08-30		</span>
+                        <span class="cell" data-label="Description">Deposit	</span>
+                         <span class="cell" data-label="Transaction">Approved</span>
+                         <span class="cell" data-label="Reason">Concert payment	</span>
+                         <span class="cell" data-label="Amount($)">630000</span>
+                      </div>
+                      <div class="row">
+                            <input type="radio" name="expand">
+                            <span class="cell primary" data-label="Date">2019-10-17 23:29:27	</span>
+                            <span class="cell" data-label="Description">Deposit</span>
+                             <span class="cell" data-label="Transaction">Transfer out 	</span>
+                             <span class="cell" data-label="Reason">No Hold	</span>
+                             <span class="cell" data-label="Amount($)">1000000</span>
+                
+                          </div>
+                          <div class="row">
+                            <input type="radio" name="expand">
+                            <span class="cell primary" data-label="Date">2019-08-30		</span>
+                            <span class="cell" data-label="Description">Deposit	</span>
+                             <span class="cell" data-label="Transaction">Approved</span>
+                             <span class="cell" data-label="Reason">Concert payment	</span>
+                             <span class="cell" data-label="Amount($)">40000</span>
+                          </div>
+        
+                          <div class="row">
+                                <input type="radio" name="expand">
+                                <span class="cell primary" data-label="Date">2019-08-30		</span>
+                                <span class="cell" data-label="Description">Deposit	</span>
+                                 <span class="cell" data-label="Transaction">Approved</span>
+                                 <span class="cell" data-label="Reason">Concert payment	</span>
+                                 <span class="cell" data-label="Amount($)">630000</span>
+                              </div>
+                              <div class="row">
+                                    <input type="radio" name="expand">
+                                    <span class="cell primary" data-label="Date">2019-10-17 23:29:27	</span>
+                                    <span class="cell" data-label="Description">Deposit</span>
+                                     <span class="cell" data-label="Transaction">Transfer out 	</span>
+                                     <span class="cell" data-label="Reason">No Hold	</span>
+                                     <span class="cell" data-label="Amount($)">1000000</span>
+                        
+                                  </div>
+                                  <div class="row">
+                                    <input type="radio" name="expand">
+                                    <span class="cell primary" data-label="Date">2019-08-30		</span>
+                                    <span class="cell" data-label="Description">Deposit	</span>
+                                     <span class="cell" data-label="Transaction">Approved</span>
+                                     <span class="cell" data-label="Reason">Concert payment	</span>
+                                     <span class="cell" data-label="Amount($)">40000</span>
+                                  </div>
+        
+                                  <div class="row">
+                                        <input type="radio" name="expand">
+                                        <span class="cell primary" data-label="Date">2019-08-30		</span>
+                                        <span class="cell" data-label="Description">Deposit	</span>
+                                         <span class="cell" data-label="Transaction">Approved</span>
+                                         <span class="cell" data-label="Reason">Concert payment	</span>
+                                         <span class="cell" data-label="Amount($)">630000</span>
+                                      </div>
+                                      <div class="row">
+                                            <input type="radio" name="expand">
+                                            <span class="cell primary" data-label="Date">2019-10-17 23:29:27	</span>
+                                            <span class="cell" data-label="Description">Deposit</span>
+                                             <span class="cell" data-label="Transaction">Transfer out 	</span>
+                                             <span class="cell" data-label="Reason">No Hold	</span>
+                                             <span class="cell" data-label="Amount($)">1000000</span>
+                                
+                                          </div>
+                                          <div class="row">
+                                            <input type="radio" name="expand">
+                                            <span class="cell primary" data-label="Date">2019-08-30		</span>
+                                            <span class="cell" data-label="Description">Deposit	</span>
+                                             <span class="cell" data-label="Transaction">Approved</span>
+                                             <span class="cell" data-label="Reason">Concert payment	</span>
+                                             <span class="cell" data-label="Amount($)">40000</span>
+                                          </div>
+        
+                                          <div class="row">
+                                                <input type="radio" name="expand">
+                                                <span class="cell primary" data-label="Date">2019-08-30		</span>
+                                                <span class="cell" data-label="Description">Deposit	</span>
+                                                 <span class="cell" data-label="Transaction">Approved</span>
+                                                 <span class="cell" data-label="Reason">Concert payment	</span>
+                                                 <span class="cell" data-label="Amount($)">630000</span>
+                                              </div>
+                                              <div class="row">
+                                                    <input type="radio" name="expand">
+                                                    <span class="cell primary" data-label="Date">2019-10-17 23:29:27	</span>
+                                                    <span class="cell" data-label="Description">Deposit</span>
+                                                     <span class="cell" data-label="Transaction">Transfer out 	</span>
+                                                     <span class="cell" data-label="Reason">No Hold	</span>
+                                                     <span class="cell" data-label="Amount($)">1000000</span>
+                                        
+                                                  </div>
+                                                  <div class="row">
+                                                    <input type="radio" name="expand">
+                                                    <span class="cell primary" data-label="Date">2019-08-30		</span>
+                                                    <span class="cell" data-label="Description">Deposit	</span>
+                                                     <span class="cell" data-label="Transaction">Approved</span>
+                                                     <span class="cell" data-label="Reason">Concert payment	</span>
+                                                     <span class="cell" data-label="Amount($)">40000</span>
+                                                  </div>
+        
+                  
+        </div>
+        <div class="caption">Account Statement/Balance
+        
+        
+            </div>	
+            <div id="table">
+                    
+                  <div class="header-row row">
+                    <span class="cell primary" >Account-Name		</span>
+                    <span class="cell" >Account-Type		</span>
+                     <span class="cell" >Account-Number		</span>
+                     <span class="cell" >Total / Available Balance
+                        </span>
+                
+                  </div>
+                  <div class="row">
+                    <input type="radio" name="expand">
+                    <span class="cell primary" data-label="Name">John Francis Bongiovi		</span>
+                    <span class="cell" data-label="Type">Offshore Account		</span>
+                     <span class="cell" data-label="Number">7118478527	</span>
+                     <span class="cell" data-label="Total">$1,330,600
+                        </span>
+                  </div>
+        
+                
+                          
+                </div>
+        
+        </section>
+        </div>
+        
+        <div id="content5">
+        
+            <img class="img" src="../ass/img/download (10).png" alt="" style="width: 100%; ">
+        </div>
+</div>
+
+
+<script>
+const toggleSidebar = () => {
+    document.getElementById('sidebar').classList.toggle('active')
+    document.getElementById('user').classList.toggle('active')
+    document.getElementById('content1').classList.toggle('active')
+    document.getElementById('content2').classList.toggle('active')
+    document.getElementById('content3').classList.toggle('active')
+    document.getElementById('content4').classList.toggle('active')
+    document.getElementById('content5').classList.toggle('active')
+
+
+
+document.querySelector('#li1').addEventListener('click', () => {
+ 
+    let render =  document.querySelector('#content1') 
+    let div = document.createElement('div')
+
+    div.appendChild(render)
+
+    document.querySelector('#container').appendChild(div)
+
+
+
+    document.querySelector('#content1').setAttribute('style', 'display:block')
+
+    document.querySelector('#content2').setAttribute('style', 'display:none')
+    document.querySelector('#content3').setAttribute('style', 'display:none')
+    document.querySelector('#content4').setAttribute('style', 'display:none')
+    document.querySelector('#content5').setAttribute('style', 'display:none')
+    document.querySelector('#li1').setAttribute('class', 'selected')
+    document.querySelector('#li2').setAttribute('class', '')
+    document.querySelector('#li3').setAttribute('class', '')
+    document.querySelector('#li4').setAttribute('class', '')
+    document.querySelector('#li5').setAttribute('class', '')
+    document.querySelector('#li6').setAttribute('class', '')
+
+
+    
+
+
+
+})
+
+document.querySelector('#li2').addEventListener('click', () => {
+    document.querySelector('#content2').setAttribute('style', 'display:block')
+
+    
+    document.querySelector('#content1').setAttribute('style', 'display:none')
+    document.querySelector('#content3').setAttribute('style', 'display:none')
+    document.querySelector('#content4').setAttribute('style', 'display:none')
+    document.querySelector('#content5').setAttribute('style', 'display:none')
+
+    document.querySelector('#li2').setAttribute('class', 'selected')
+    document.querySelector('#li1').setAttribute('class', '')
+    document.querySelector('#li3').setAttribute('class', '')
+    document.querySelector('#li4').setAttribute('class', '')
+    document.querySelector('#li5').setAttribute('class', '')
+    document.querySelector('#li6').setAttribute('class', '')
+
+
+
+})
+
+
+document.querySelector('#li3').addEventListener('click', () => {
+    document.querySelector('#content3').setAttribute('style', 'display:block')
+
+    
+    document.querySelector('#content1').setAttribute('style', 'display:none')
+    document.querySelector('#content2').setAttribute('style', 'display:none')
+    document.querySelector('#content4').setAttribute('style', 'display:none')
+    document.querySelector('#content5').setAttribute('style', 'display:none')
+
+    document.querySelector('#li3').setAttribute('class', 'selected')
+    document.querySelector('#li1').setAttribute('class', '')
+    document.querySelector('#li2').setAttribute('class', '')
+    document.querySelector('#li4').setAttribute('class', '')
+    document.querySelector('#li5').setAttribute('class', '')
+    document.querySelector('#li6').setAttribute('class', '')
+
+
+})
+
+document.querySelector('#li4').addEventListener('click', () => {
+    document.querySelector('#content4').setAttribute('style', 'display:block')
+
+    
+    document.querySelector('#content1').setAttribute('style', 'display:none')
+    document.querySelector('#content3').setAttribute('style', 'display:none')
+    document.querySelector('#content5').setAttribute('style', 'display:none')
+    document.querySelector('#content2').setAttribute('style', 'display:none')
+
+    document.querySelector('#li4').setAttribute('class', 'selected')
+    document.querySelector('#li1').setAttribute('class', '')
+    document.querySelector('#li3').setAttribute('class', '')
+    document.querySelector('#li5').setAttribute('class', '')
+    document.querySelector('#li2').setAttribute('class', '')
+    document.querySelector('#li6').setAttribute('class', '')
+
+
+
+})
+
+document.querySelector('#li5').addEventListener('click', () => {
+    document.querySelector('#content5').setAttribute('style', 'display:block')
+
+    
+    document.querySelector('#content1').setAttribute('style', 'display:none')
+    document.querySelector('#content3').setAttribute('style', 'display:none')
+    document.querySelector('#content4').setAttribute('style', 'display:none')
+    document.querySelector('#content2').setAttribute('style', 'display:none')
+
+    document.querySelector('#li5').setAttribute('class', 'selected')
+    document.querySelector('#li1').setAttribute('class', '')
+    document.querySelector('#li3').setAttribute('class', '')
+    document.querySelector('#li4').setAttribute('class', '')
+    document.querySelector('#li2').setAttribute('class', '')
+    document.querySelector('#li6').setAttribute('class', '')
+
+
+
+})
+
+document.querySelector('#li6').addEventListener('click', () => {
+
+    
+    document.querySelector('#content1').setAttribute('style', 'display:none')
+    document.querySelector('#content3').setAttribute('style', 'display:none')
+    document.querySelector('#content4').setAttribute('style', 'display:none')
+    document.querySelector('#content2').setAttribute('style', 'display:none')
+    document.querySelector('#content5').setAttribute('style', 'display:none')
+
+
+    document.querySelector('#li6').setAttribute('class', 'selected')
+    document.querySelector('#li1').setAttribute('class', '')
+    document.querySelector('#li3').setAttribute('class', '')
+    document.querySelector('#li4').setAttribute('class', '')
+    document.querySelector('#li2').setAttribute('class', '')
+    document.querySelector('#li5').setAttribute('class', '')
+
+
+
+
+})
+
+
+
+}
+</script>
+</body>
+</html>
