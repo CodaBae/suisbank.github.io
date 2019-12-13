@@ -1761,7 +1761,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_contact_quote.scss */
 .contact_form_quote {
-  padding-top: 0px;
+  padding-top: 100px;
   padding-bottom: 100px;
 }
 
@@ -3186,14 +3186,14 @@ h3 {
 /* line 6, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_footer.scss */
 .footer .footer_top {
   padding-top: 145px;
-  padding-bottom: 129px;
+  padding-bottom: 15px;
   background-image: linear-gradient(260deg, #1A2980 0%, #26D0CE 100%);}
 
 @media (max-width: 767px) {
   /* line 6, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_footer.scss */
   .footer .footer_top {
     padding-top: 60px;
-    padding-bottom: 30px;
+    padding-bottom: 5px;
   }
 }
 
