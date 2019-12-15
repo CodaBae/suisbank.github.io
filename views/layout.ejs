@@ -25,6 +25,11 @@
     <link rel="stylesheet" href="../ass/css/slick.css">
     <link rel="stylesheet" href="../ass/css/slicknav.css">
     <link rel="stylesheet" href="../ass/css/style.css">
+
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+
+
     <!-- <link rel="stylesheet" href="../ass/css/responsive.css"> -->
 </head>
 
@@ -37,6 +42,11 @@
 </div>
     <!-- header-start -->
     <!-- JS here -->
+
+<script  src="https://unpkg.com/filepond/dist/filepond.js"></script>
+<script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+<script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+<script  src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
     <script src="../ass/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="../ass/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="../ass/js/popper.min.js"></script>
@@ -64,6 +74,14 @@
     <script src="../ass/js/mail-script.js"></script>
 
     <script src="../ass/js/main.js"></script>
+    <script>
+    FilePond.registerPlugin(
+FilePondPluginImagePreview,
+FilePondPluginImageResize,
+FilePondPluginFileEncode,
+)
+FilePond.parse(document.body)
+    </script>
 </body>
 
 </html>
