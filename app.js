@@ -17,7 +17,7 @@ const db = require('./config/keys').mongoURI;
 mongoose
   .connect(
     db,
-    { useNewUrlParser: true }
+    { useNewUrlParser: true,useUnifiedTopology: true }
   )
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
@@ -25,7 +25,7 @@ mongoose
 // EJS
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
-app.use('/ass', express.static('ass'))
+app.use('/ass', express.static('ass')) 
 
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
@@ -33,12 +33,12 @@ app.use(express.urlencoded({ extended: true }));
 // Express session
 app.use(
   session({
-    secret: 'secret',
+    secret: 'secret', 
     resave: true,
     saveUninitialized: true
-  })
-);
-
+  }) 
+);  
+ 
 // Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
@@ -53,11 +53,11 @@ app.use(function(req, res, next) {
   res.locals.error = req.flash('error');
   next();
 });
-
+ 
 // Routes
 app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
 
 const PORT = process.env.PORT || 6020;
-
+  
 app.listen(PORT, console.log(`Server started on port ${PORT}`));

@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const gravatar = require('gravatar')
+
 // Load User model
 const User = require('../models/User');
 const { forwardAuthenticated } = require('../config/auth');
@@ -51,11 +53,19 @@ router.post('/register', (req, res) => {
           password2
         });
       } else {
+        
+        let avatar = gravatar.url(email, {
+          s:'200',
+          r:'pg',
+          d:'mm',
+        })
+      console.log(avatar)
         const newUser = new User({
           name,
           email,
           pin,
-          password
+          password,
+          avatar
         });
 
         bcrypt.genSalt(10, (err, salt) => {

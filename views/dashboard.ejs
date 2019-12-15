@@ -69,9 +69,9 @@
 }
 #user{
     position: absolute;
-    left: 1218px;
-    top: 20px;
-    width: 105%;
+    left: 1160px;
+    top: 9px;
+    width: 35em;
     display: flex;
     /* align-content: flex-end; */
     color: white;
@@ -153,16 +153,32 @@
     border-radius: 3px;
 }
 #puser{
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     margin-left: 5px;
-    margin-top: 5px;}
+    margin-top: 15px;}
 
 #container{
     padding-top: 5%
 }
+.avatar{
+    width: 11%;
+            border-radius: 70%;
+}
 @media only screen and (max-width: 760px)  {
+    #active{
+    position: absolute;
+    left: 280px;
+    top: 28px;
+    width: 45%;
+    color: white;
+
+}
     #container{
     padding-top: 20%
+}
+.avatar{
+    width: 27%;
+
 }
     .t2{
         width: 95%
@@ -174,9 +190,9 @@
         margin-top:20%
     }
     #user{
-        left: 424px;
-    width: 70%;
-    top: 23px;
+        left: 360px;
+    width: 100%;
+    top: 15px;
 
     }
     #active.active{
@@ -232,7 +248,10 @@
         </div>
 
         <div id="user" >
-            <img id="imguser" src="../ass/img/user.png" alt="" width="30" style="display: inline">
+            <img src=<%= user.avatar %>  class='avatar'
+            alt="">
+
+
             <p id="puser" style="display: inline;;
             ">
             <%= user.name %>
@@ -806,8 +825,9 @@ document.querySelector('#li6').addEventListener('click', () => {
 })
 
 
-
 }
+
+
 </script>
 </body>
 </html>
