@@ -19,11 +19,15 @@
     "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.15.6",
     "gravatar": "^1.8.0",
+<<<<<<< HEAD
     "gridfs-stream": "^1.1.1",
     "method-override": "^3.0.0",
     "mongoose": "^5.4.1",
     "multer": "^1.4.2",
     "multer-gridfs-storage": "^4.0.1",
+=======
+    "mongoose": "^5.8.1",
+>>>>>>> 357bed5201d77276ecc79d57701da825636ce994
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
   },
