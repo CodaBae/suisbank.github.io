@@ -826,7 +826,6 @@ socket.on('user-disconnected', name =>{
 appendMsg(`${name}: disconnected`)
 })
 
-
 chatForm.addEventListener('submit', e => {
     e.preventDefault()
     const message = messageInput.value
@@ -843,11 +842,6 @@ function appendMsg(message) {
     msgContainer.appendChild(messageEle)
 }
 
-
-
-
-
-
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
@@ -855,8 +849,6 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
-
-
 const toggleSidebar = () => {
     document.getElementById('sidebar').classList.toggle('active')
     document.getElementById('user').classList.toggle('active')
@@ -866,8 +858,6 @@ const toggleSidebar = () => {
     document.getElementById('content4').classList.toggle('active')
     document.getElementById('content5').classList.toggle('active')
 
-
-
 document.querySelector('#li1').addEventListener('click', () => {
  
     let render =  document.querySelector('#content1') 
@@ -876,9 +866,6 @@ document.querySelector('#li1').addEventListener('click', () => {
     div.appendChild(render)
 
     document.querySelector('#container').appendChild(div)
-
-
-
     document.querySelector('#content1').setAttribute('style', 'display:block')
 
     document.querySelector('#content2').setAttribute('style', 'display:none')
@@ -891,18 +878,10 @@ document.querySelector('#li1').addEventListener('click', () => {
     document.querySelector('#li4').setAttribute('class', '')
     document.querySelector('#li5').setAttribute('class', '')
     document.querySelector('#li6').setAttribute('class', '')
-
-
-    
-
-
-
 })
 
 document.querySelector('#li2').addEventListener('click', () => {
-    document.querySelector('#content2').setAttribute('style', 'display:block')
-
-    
+    document.querySelector('#content2').setAttribute('style', 'display:block')    
     document.querySelector('#content1').setAttribute('style', 'display:none')
     document.querySelector('#content3').setAttribute('style', 'display:none')
     document.querySelector('#content4').setAttribute('style', 'display:none')
@@ -915,15 +894,10 @@ document.querySelector('#li2').addEventListener('click', () => {
     document.querySelector('#li5').setAttribute('class', '')
     document.querySelector('#li6').setAttribute('class', '')
 
-
-
 })
 
-
 document.querySelector('#li3').addEventListener('click', () => {
-    document.querySelector('#content3').setAttribute('style', 'display:block')
-
-    
+    document.querySelector('#content3').setAttribute('style', 'display:block')    
     document.querySelector('#content1').setAttribute('style', 'display:none')
     document.querySelector('#content2').setAttribute('style', 'display:none')
     document.querySelector('#content4').setAttribute('style', 'display:none')
@@ -935,7 +909,6 @@ document.querySelector('#li3').addEventListener('click', () => {
     document.querySelector('#li4').setAttribute('class', '')
     document.querySelector('#li5').setAttribute('class', '')
     document.querySelector('#li6').setAttribute('class', '')
-
 
 })
 
@@ -954,9 +927,6 @@ document.querySelector('#li4').addEventListener('click', () => {
     document.querySelector('#li5').setAttribute('class', '')
     document.querySelector('#li2').setAttribute('class', '')
     document.querySelector('#li6').setAttribute('class', '')
-
-
-
 })
 
 document.querySelector('#li5').addEventListener('click', () => {
@@ -975,19 +945,14 @@ document.querySelector('#li5').addEventListener('click', () => {
     document.querySelector('#li2').setAttribute('class', '')
     document.querySelector('#li6').setAttribute('class', '')
 
-
-
 })
 
-document.querySelector('#li6').addEventListener('click', () => {
-
-    
+document.querySelector('#li6').addEventListener('click', () => {    
     document.querySelector('#content1').setAttribute('style', 'display:none')
     document.querySelector('#content3').setAttribute('style', 'display:none')
     document.querySelector('#content4').setAttribute('style', 'display:none')
     document.querySelector('#content2').setAttribute('style', 'display:none')
     document.querySelector('#content5').setAttribute('style', 'display:none')
-
 
     document.querySelector('#li6').setAttribute('class', 'selected')
     document.querySelector('#li1').setAttribute('class', '')
@@ -996,14 +961,10 @@ document.querySelector('#li6').addEventListener('click', () => {
     document.querySelector('#li2').setAttribute('class', '')
     document.querySelector('#li5').setAttribute('class', '')
 
-
-
-
 })
 
 
 }
-
 function myFunction() {
     document.querySelector('#blah').setAttribute('src',localStorage.getItem('img') )
 
@@ -1016,8 +977,6 @@ function myFunction() {
     }
 
 }
-
-
 function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
@@ -1034,11 +993,7 @@ function readURL(input) {
                 document.querySelector('#blah').setAttribute('style', 'display:block')
             }
         }
-
-
 document.querySelector('#up').addEventListener('onChange',(e) =>{
-
-
 })
 
 </script>
